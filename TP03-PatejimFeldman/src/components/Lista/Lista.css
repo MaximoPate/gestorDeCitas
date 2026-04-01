@@ -1,0 +1,17 @@
+section {
+	border-bottom: 1px solid #e1e1e1;
+	padding-bottom: 1rem;
+}
+
+.lista-citas .media-body p {
+	margin: 0;
+}
+
+.lista-citas .media-body button {
+	margin-top: 1rem !important;
+}
+
+.lista-citas .media-body span {
+	font-weight: bold;
+}
+
