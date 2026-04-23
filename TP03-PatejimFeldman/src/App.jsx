@@ -9,6 +9,7 @@ import Lista from './components/Lista/Index'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [citas, setCitas] = useState([])
 
   return (
     <>
@@ -16,11 +17,11 @@ function App() {
       <section>
         <div>
           <h1>CREAR MI CITA</h1>
-          <Form />
+          <Form setCitas={setCitas} />
         </div>
         <div>
           <h1>ADMINISTRA TUS CITAS</h1>
-          <Lista />
+          <Lista citas={citas} setCitas={setCitas} />
         </div>
       </section>
     </>

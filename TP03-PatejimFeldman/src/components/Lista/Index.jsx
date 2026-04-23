@@ -2,7 +2,9 @@ import Card from "../Card/Index";
 import "./Lista.css";
 
 
-function Lista({}) {
+function Lista({citas, setCitas}) {
+
+
     return (
         <section class="listado-citas">
         <Card
@@ -26,6 +28,17 @@ function Lista({}) {
             hora="08:20"
             sintomas="Le duele la pierna"
         />
+        {
+            citas.map(n => 
+                <Card
+                    mascota={n.mascota}
+                    dueño={n.propietario}
+                    fecha={n.fecha}
+                    hora={n.hora}
+                    sintomas={n.sintomas}
+                />
+            )
+        }
         </section>
     );
 }
