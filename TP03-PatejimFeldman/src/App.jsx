@@ -11,6 +11,7 @@ function App() {
   const [citas, setCitas] = useState([])
   
   const eliminarCita = (id) => {
+      if (!window.confirm('¿Estás seguro que quieres eliminar esta cita?')) return;
     setCitas(prev => prev.filter(cita => cita.id !== id));
   }
 
