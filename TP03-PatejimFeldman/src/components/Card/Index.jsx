@@ -1,6 +1,6 @@
 import "./Card.css";
 
-function Card({mascota, dueño, fecha, hora, sintomas}) {
+function Card({mascota, dueño, fecha, hora, sintomas, id, onDelete}) {
     return (
         <div class="cita">
               <p>Mascota: <span>{mascota}</span></p>
@@ -8,7 +8,7 @@ function Card({mascota, dueño, fecha, hora, sintomas}) {
               <p>Fecha: <span>{fecha}</span></p>
               <p>Hora: <span>{hora}</span></p>
               <p>Sintomas: <span>{sintomas}</span></p>
-              <button class="button elimnar u-full-width" >Eliminar ×</button>
+              <button class="button elimnar u-full-width" onClick={() => onDelete(id)}>Eliminar ×</button>
         </div>
     );
 }

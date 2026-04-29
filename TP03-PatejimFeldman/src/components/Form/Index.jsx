@@ -8,6 +8,7 @@ function Form({ setCitas }) {
         const form = e.target;
 
         const nueva = {
+            id: Date.now(),
             mascota: form.mascota.value,
             propietario: form.propietario.value,
             fecha: form.fecha.value,

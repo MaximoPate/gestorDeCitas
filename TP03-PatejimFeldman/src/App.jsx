@@ -8,20 +8,23 @@ import Form from './components/Form/Index'
 import Lista from './components/Lista/Index'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [citas, setCitas] = useState([])
+  
+  const eliminarCita = (id) => {
+    setCitas(prev => prev.filter(cita => cita.id !== id));
+  }
 
   return (
     <>
       <Title />
       <section>
         <div>
-          <h1>CREAR MI CITA</h1>
+          <h1>CREAR MI CITA</h1>  
           <Form setCitas={setCitas} />
         </div>
         <div>
           <h1>ADMINISTRA TUS CITAS</h1>
-          <Lista citas={citas} setCitas={setCitas} />
+          <Lista citas={citas} eliminarCita={eliminarCita} />
         </div>
       </section>
     </>
