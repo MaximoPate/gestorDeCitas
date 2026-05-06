@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -8,7 +8,14 @@ import Form from './components/Form/Index'
 import Lista from './components/Lista/Index'
 
 function App() {
-  const [citas, setCitas] = useState([])
+  const [citas, setCitas] = useState(() => {
+    const raw = localStorage.getItem('citas')
+    return raw ? JSON.parse(raw) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('citas', JSON.stringify(citas))
+  }, [citas])
   
   const eliminarCita = (id) => {
       if (!window.confirm('¿Estás seguro que quieres eliminar esta cita?')) return;
